@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    Charmaine Washington, October 30, 2023, Color Mixer(Lab 9A), Javascript1
+    -->
+    <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width" /> 
+    <title>Charmaine's Color Mixer</title>
+    <style>
+    /* styles go here */
+    #swatch { width: 80%; max-width: 600px; height: 100px;
+            border-radius: 15px; background-color: rgb(64, 128, 192);
+            margin: 1em auto 3em;
+            border: 3px solid black;
+        }
+        p { width: 80%; max-width: 600px; margin: 1em auto;}
+        input[type='range'] {width: 100%;} 
+    </style>
+</head>
+
+<body>
+    <h1>COlor Mixer</h1>
+    <!-- page content will go here -->
+
+    <div id="swatch">&nbsp;</div>
+
+    <p>
+        <input type="range" id="redslider" min="0" max="255" value="64" />
+    </p>
+
+    <p>
+        <input type="range" id="greenslider" min="0" max="255" value="128" />
+    </p>
+
+    <p>
+        <input type="range" id="blueslider" min="0" max="255" value="192" />
+    </p>
+
+    <script>
+    // scripts will go here
+    function get(id) { return document.getElementById(id); }
+    get('redslider').oninput = recolor;
+    get('greenslider').oninput = recolor;
+    get('blueslider').oninput = recolor;
+
+    function recolor(e) {
+        var redamount = get('redslider').value;
+        var redamount = get('greenslider').value;
+        var redamount = get('blueslider').value;
+        get('swatch').style.backgroundColor = 
+        //rgb(64, 128, 192);
+        "rgb(" + redamount + "," + greenamount + "," + blueamount + ")";
+    }
+    </script>
+</body>
+</html>
