@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    Charmaine washington, 10/31/2023, Lab9B, Javascript 1
+    -->
+    <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width" /> 
+    <title>Charmaine's Rolling Basketball</title>
+    <style>
+    /* styles go here */
+        h1 {text-align: center;}
+        div {width: 90%; max-width: 600px;}
+        div#floor {height: 8px; background-color: gray; margin-top: -10px;}
+        /*#ball {transform: translate(150px, 0); rotate(60deg); } */
+    </style>
+</head>
+
+<body>
+    <h1>Basketball Timer</h1>
+    <!-- page content will go here -->
+
+    <div>
+        <img src="basketball.png" alt="Basketball" id="ball">
+    </div>
+
+    <div id="floor">&nbsp;</div>
+
+    <script>
+    // scripts will go here
+    var ball = document.getElementById('ball');
+    //transfor: translate(150px, 0) rotate(60deg);
+    //ball.style.transform = "translate(300px, 0) rotate(90deg)";'
+    
+    var x = 0;
+    var dx = 5;
+    var timer = setInterval(moveBall, 35);
+
+    function moveBall() {
+        x+=dx;
+        ball.style.transform = "translate(" + x + "px,0) rotate("+ x + "deg)";
+        if (x > 490|| x < 0) {
+            dx *= -1;
+        }
+    }
+
+    </script>
+</body>
+</html>
